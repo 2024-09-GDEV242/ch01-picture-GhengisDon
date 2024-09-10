@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.*;
 
 /**
- * Canvas is a class to allow for simple graphical drawing on a canvas.
- * This is a modification of the general purpose Canvas, specially made for
- * the BlueJ "shapes" example. 
+ * Canvas class has recieved multiple edits the first being in the size of the actual canvas
+ * The edit is found in public static Canvas getCanvas() and has been altered to be a 640x480
  *
- * @author: Bruce Quig
- * @author: Michael Kšlling (mik)
+ * Additional edits are the inclusions of a variety of new colors they are as follows 'turquiose', 'pink',
+ * 'lime', 'ruby', 'navy', 'aqua', 'sandstone', 'slate', and 'beige'.
+ * @author: Don Santiago
  *
- * @version 2016.02.29
+ * @version 2024.09.10
  */
 public class Canvas
 {
@@ -28,7 +28,7 @@ public class Canvas
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {
-            canvasSingleton = new Canvas("BlueJ Picture Demo", 500, 300, 
+            canvasSingleton = new Canvas("BlueJ Picture Demo", 640, 480, 
                                          Color.white);
         }
         canvasSingleton.setVisible(true);
@@ -142,6 +142,33 @@ public class Canvas
         }
         else if(colorString.equals("white")) {
             graphic.setColor(Color.white);
+        }
+        else if (colorString.equals("turquoise")) {
+            graphic.setColor(new Color(72,203,197));
+        }
+        else if (colorString.equals("pink")){
+            graphic.setColor(new Color(241,153,184));
+        }
+        else if (colorString.equals("lime")){
+            graphic.setColor(new Color(192,241,153));
+        }
+        else if (colorString.equals("ruby")){
+            graphic.setColor(new Color(214,30,52));
+        }
+        else if (colorString.equals("navy")){
+            graphic.setColor(new Color(27,105,142));
+        }
+        else if (colorString.equals("aqua")){
+            graphic.setColor(new Color(111,234,195));
+        }
+        else if (colorString.equals("sandstone")){
+            graphic.setColor(new Color(216,173,67));
+        }
+        else if (colorString.equals("slate")){
+            graphic.setColor(new Color(147,141,126));
+        }
+        else if (colorString.equals("beige")){
+            graphic.setColor(new Color(214,205,183));
         }
         else {
             graphic.setColor(Color.black);

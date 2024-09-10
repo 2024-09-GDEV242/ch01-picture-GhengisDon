@@ -1,21 +1,27 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
- *
- * This class was written as an early example for teaching Java with BlueJ.
+ * chapter 1 picture assignment, instantiates a total of 9 objects
+ * additionally has the ability to change between black and white modes and the default color set
+ * there are also a total of two animation features which move all objects from their default positions
+ * finally there is the addition of newForegroundColor which changes all objects into base colors from template
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * Story of the picture is that there is a team at a big orb, sunrise animation puts the team in position to move
+ * sunset animation places the team in a position which surrounds the orb
+ * additional use of the sunrise animation and sunset animations move the team out of the frame.
+ * 
+ * @author: Don Santiago
+ * @version 2024.9.10
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
-    private Circle sun2;
+    private Square area;
+    private Triangle prism;
+    private Circle orb;
+    private Person testDummy1;
+    private Person testDummy2;
+    private Person testDummy3;
+    private Person testDummy4;
+    private Person testDummy5;
+    private Person testDummy6;
     private boolean drawn;
 
     /**
@@ -23,11 +29,15 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
-        
+        area = new Square();
+        prism = new Triangle();  
+        orb = new Circle();
+        testDummy1=new Person();
+        testDummy2=new Person();
+        testDummy3=new Person();
+        testDummy4=new Person();
+        testDummy5=new Person();
+        testDummy6=new Person();
         drawn = false;
     }
 
@@ -37,28 +47,33 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
-            
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeInvisible();
+            area.makeVisible();
+            orb.makeVisible();
+            prism.makeVisible();
 
+            testDummy1.changeColor("turquoise");
+            testDummy1.moveHorizontal(-20);
+            testDummy1.makeVisible();
+            
+            testDummy2.changeColor("pink");
+            testDummy2.moveHorizontal(20);
+            testDummy2.makeVisible();
+            
+            testDummy3.changeColor("lime");
+            testDummy3.moveHorizontal(80);
+            testDummy3.makeVisible();
+            
+            testDummy4.changeColor("ruby");
+            testDummy4.moveHorizontal(-80);
+            testDummy4.makeVisible();
+            
+            testDummy5.changeColor("navy");
+            testDummy5.moveHorizontal(-180);
+            testDummy5.makeVisible();
+            
+            testDummy6.changeColor("aqua");
+            testDummy6.moveHorizontal(180);
+            testDummy6.makeVisible();
             
             drawn = true;
         }
@@ -69,10 +84,15 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        area.changeColor("black");
+        orb.changeColor("white");
+        prism.changeColor("black");
+        testDummy1.changeColor("white");
+        testDummy2.changeColor("white");
+        testDummy3.changeColor("black");
+        testDummy4.changeColor("black");
+        testDummy5.changeColor("black");
+        testDummy6.changeColor("black");
     }
 
     /**
@@ -80,73 +100,71 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+
+        area.changeColor("sandstone");
+        orb.changeColor("slate");
+        prism.changeColor("beige");
+        testDummy1.changeColor("turquoise");
+        testDummy2.changeColor("pink");
+        testDummy3.changeColor("lime");
+        testDummy4.changeColor("ruby");
+        testDummy5.changeColor("navy");
+        testDummy6.changeColor("aqua");
     }
     
     /**
-     * This should create a sunrise display
+     * This should create an animated display
      */
     public void setSunrise()
     {   
-        if(!drawn){
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
-                
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
-        
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
-            
-        sun.changeColor("yellow");
-        sun.slowMoveVertical(-120);
-        sun.slowMoveHorizontal(-180);
-        sun.makeVisible();
-            
-        drawn=true;
-    }
-    }
 
+        orb.slowMoveVertical(-280);
+        prism.slowMoveVertical(-280);
+        testDummy1.slowMoveVertical(100);
+        testDummy1.slowMoveHorizontal(-20);
+        testDummy2.slowMoveVertical(100);
+        testDummy2.slowMoveHorizontal(20);
+        testDummy3.slowMoveVertical(160);
+        testDummy3.slowMoveHorizontal(45);
+        testDummy4.slowMoveVertical(160);
+        testDummy4.slowMoveHorizontal(-45);
+        testDummy5.slowMoveVertical(220);
+        testDummy5.slowMoveHorizontal(-60);
+        testDummy6.slowMoveVertical(220);
+        testDummy6.slowMoveHorizontal(60);
+    }
+    
     /**
-     * This should create a sunset display
+     * This should create an animated display, it also moves the testDummys object after orbset
      */
     public void setSunset()
     {
-    if(!drawn){
+        orb.slowMoveVertical(280);
+        prism.slowMoveVertical(280);
+        testDummy1.slowMoveVertical(-300);
+        testDummy2.slowMoveVertical(-300);
+        testDummy3.slowMoveVertical(-160);
+        testDummy3.slowMoveHorizontal(55);
+        testDummy4.slowMoveVertical(-160);
+        testDummy4.slowMoveHorizontal(-55);
+        testDummy5.slowMoveHorizontal(120);
+        testDummy6.slowMoveHorizontal(-120);
         
-    wall.moveHorizontal(-140);
-    wall.moveVertical(20);
-    wall.changeSize(120);
-    wall.makeVisible();
-                
-    window.changeColor("black");
-    window.moveHorizontal(-120);
-    window.moveVertical(40);
-    window.changeSize(40);
-    window.makeVisible();
-        
-    roof.changeSize(60, 180);
-    roof.moveHorizontal(20);
-    roof.moveVertical(-60);
-    roof.makeVisible();
-            
-    sun.changeColor("yellow");
-    sun.slowMoveVertical(225);
-    sun.slowMoveHorizontal(200);
-    sun.makeVisible();
-        
-    drawn=true;
     }
-
+    
+    /**
+     * This should swap all the colors to a different set of colors
+     */
+    public void setForegroundColor()
+    {
+        area.changeColor("red");
+        orb.changeColor("green");
+        prism.changeColor("magenta");
+        testDummy1.changeColor("blue");
+        testDummy2.changeColor("blue");
+        testDummy3.changeColor("blue");
+        testDummy4.changeColor("blue");
+        testDummy5.changeColor("blue");
+        testDummy6.changeColor("blue");    
     }
 }

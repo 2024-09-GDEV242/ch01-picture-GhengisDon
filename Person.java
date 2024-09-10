@@ -3,8 +3,10 @@ import java.awt.*;
 /**
  * A person that can be manipulated and that draws itself on a canvas.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author: Don Santiago
+ * @version 2024.09.10
+ * 
+ * version edits include changes to the size of the original asset in addition to default positioning of such.
  */
 
 public class Person
@@ -21,10 +23,10 @@ public class Person
      */
     public Person()
     {
-        height = 60;
-        width = 30;
-        xPosition = 280;
-        yPosition = 190;
+        height = 120;
+        width = 60;
+        xPosition = 300;
+        yPosition = 210;
         color = "black";
         isVisible = false;
     }

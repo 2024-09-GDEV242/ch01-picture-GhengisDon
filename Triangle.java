@@ -3,8 +3,10 @@ import java.awt.*;
 /**
  * A triangle that can be manipulated and that draws itself on a canvas.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author: Don Santiago
+ * @version 2024.09.10
+ * 
+ * version edits include changes to size and position of asset in addition to colorway.
  */
 
 public class Triangle
@@ -21,11 +23,11 @@ public class Triangle
      */
     public Triangle()
     {
-        height = 60;
-        width = 70;
-        xPosition = 210;
-        yPosition = 140;
-        color = "green";
+        height = 300;
+        width = 300;
+        xPosition = 300;
+        yPosition = 60;
+        color = "beige";
         isVisible = false;
     }
 
